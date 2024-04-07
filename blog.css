@@ -1,8 +1,10 @@
 /* stylelint-disable @stylistic/selector-list-comma-newline-after */
-
+/* med salmon #f8d3c5 blush #fceee9 pale sage #dde6d5 med sage #a3b899 dark sage #667b68 */
 header {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
-  font-size: 2.25rem;
+  font-size: 2rem;
+  padding: 1rem max(1rem,50% - 22rem) calc(2*var(--s));
+  background-color: #a3b899;
 }
 
 .blog-header-logo:hover {
@@ -31,21 +33,109 @@ h1, h2, h3, h4, h5, h6 {
  * Blog posts
  */
 article {
-  background-color:ghostwhite;
-  border: 3px groove palevioletred;
+  text-align: center;
+  background-color:#dde6d5;
+  box-shadow: 10px 10px #667b68;
+  border: 5px solid #a3b899;
   border-radius: 10px;
   margin-bottom: 4rem;
 }
 article {
   margin-bottom: 1.25rem;
-  color: #727272;
+  color: #667b68;
+}
+.slant-pink {
+  --a: 1.45deg; /* control the angle (it should be small) */
+  
+  border-image: conic-gradient(pink 0 0) fill 0//9999px;
+  clip-path: 
+    polygon(
+      -9999px calc(tan(var(--a)) * 9999px),
+      9999px calc(tan(var(--a)) * -9999px),
+      calc(100% + 9999px) calc(100% - tan(var(--a)) * 9999px),
+      calc(100% - 9999px) calc(100% + tan(var(--a)) * 9999px)
+    );
+}
+.slant-blue {
+  --a: 1.45deg; /* control the angle (it should be small) */
+  
+  border-image: conic-gradient(rgb(192, 232, 255) 0 0) fill 0//9999px;
+  clip-path: 
+    polygon(
+      -9999px calc(tan(var(--a)) * 9999px),
+      9999px calc(tan(var(--a)) * -9999px),
+      calc(100% + 9999px) calc(100% - tan(var(--a)) * 9999px),
+      calc(100% - 9999px) calc(100% + tan(var(--a)) * 9999px)
+    );
 }
 body {
-  background-color: lavenderblush;
+  background-color: #f8d3c5;
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
 }
 footer {
-  background-color: ghostwhite;
+  background-color: #f8d3c5;
 }
-header {
-  background-color:lavender;
+/*header {
+  
+    border-image: linear-gradient(0deg,#cf65c1 8px,#f4ceef 0) fill 0//0 100vw;
+    padding-block: 5px;
+  
+}*/
+.wavy {
+  --s: 1em; /* the size of the wave */
+  --p: .9;    /* the curvature of the wave [0 2] */
+
+  --R: calc(var(--s)*sqrt(var(--p)*var(--p) + 1)) at 50%;
+  mask:
+    radial-gradient(var(--R) calc(100% - var(--s)*(1 + var(--p))), #000 99%, #0000 101%) 
+      calc(50% - 2*var(--s)) 0/calc(4*var(--s)),
+    radial-gradient(var(--R) calc(100% + var(--s)*var(--p)), #0000 99%, #000 101%) 
+      50% calc(-1*var(--s))/calc(4*var(--s)) repeat-x;
+}
+h2 {
+  --a: -45deg; /* control the angle */
+  --t: .23em; /* thickness of the underline */ 
+}
+
+h2 span {
+  --_s: calc(var(--t)*cos(var(--a)));
+  background:
+    linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0) 
+    bottom/var(--i,90%) var(--t) no-repeat;
+  padding: 0 .25em calc(var(--t) + .1em);
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+  transition: .3s;
+}
+h2:hover span {
+  --i: 100%;
+}
+a {
+  text-decoration: none;
+}
+.option1 { 
+  display: inline-block; /* show on the same line */ 
+  padding-right: 5px;
+  text-align: center;
+}
+.header-container { 
+  white-space: nowrap; /* Prevents wrapping onto a new line */ 
+} 
+ 
+.header { 
+  display: inline-block; 
+  margin-right: 20px; /* Add spacing between headers as desired */ 
+} 
+.blogtitle {
+  --s: 6px;   /* the thickness */
+  --c: #667b68;   /* the color */
+  --w: 100px; /* the width */
+  --g: 10px;  /* the gap */
+  border-image: 
+    linear-gradient(
+     #0000      calc(50% - var(--s)/2),
+     var(--c) 0 calc(50% + var(--s)/2),
+     #0000    0) 
+   0 1/0 var(--w)/0 calc(var(--w) + var(--g));
 }
