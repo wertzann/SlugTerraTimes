@@ -18,24 +18,44 @@
     <link rel="stylesheet" href="blog.css">
 </head>
 <header>
-    <h1>Slugterra Blog</h1>
+    <hgroup>
+        <h1>The Slugterra Times</h1>
+        <h2>The <em>only</em> place for Slugterra news</h2>
+    </hgroup>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Slugterra Times</a></li>
+            <li><a href="./aboutme.html">About the Big Cheese</a></li>
+            <li><a href = "#blog">Blog Posts</a></li> <!--using an anchor to reference division ids to link to different web page sections-->
+            <li><a href="#news">News</a></li>
+        </ul>
+    </nav>
 </header>
 <body>
     <main>
         <input type="checkbox" id="answer" name="answer" value="Yes">
         <label for="answer">I live for Slugterra</label>
-        <h1>Blog Posts by the Big Cheese</h1>
-        <article>
-            <h2>Is slug battling ethical?</h2>
-            <p>Literally who gives a flying fuck,  it is so cool, P*kemon could never.</p>
-        </article>
-        <article>
-            <h2>Why does this show have me by the balls?</h2>
-            <p>help</p>
-        </article>
+        <div id="blog">
+          <h1>Blog Posts by the Big Cheese</h1>
+          <article>
+              <h2>Is slug battling ethical?</h2>
+              <p>Literally who gives a flying fuck,  it is so cool, P*kemon could never.</p>
+          </article>
+          <article>
+              <h2>Why does this show have me by the balls?</h2>
+              <p>Honestly, I really think it has something to do with the bright colors and silly goofy jokes. Something about the content is SO EASY to consume, especially when the episodes are pretty short.</p>
+          </article>
+        </div>
+        <div id="news">
+            <h1>Slugterra News Corner</h1>
+            <article>
+              <h2>News Update!</h2>
+              <p>Nothing has happened regarding Slugterra in over a decade, what did you think you would find here? Did you assume that because I love Slugterra I somehow have all the answers? Get over yourself.</p>
+            </article>
+        </div>
     </main>
     <footer>
-        <h3>Copyright the Big Cheese 2024</h3><br>
+        <h3>Copyright the Big Cheese 2024</h3>
         <p>please don't steal, i know this is pretty high level shit</p>
     </footer>
 </body>
