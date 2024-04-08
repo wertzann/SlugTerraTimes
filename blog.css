@@ -1,7 +1,7 @@
 /* stylelint-disable @stylistic/selector-list-comma-newline-after */
 /* med salmon #f8d3c5 blush #fceee9 pale sage #dde6d5 med sage #a3b899 dark sage #667b68 */
 header {
-  width:100%
+  width:100%;
   font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-size: 2rem;
   padding-block: 5px;
