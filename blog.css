@@ -1,11 +1,17 @@
 /* stylelint-disable @stylistic/selector-list-comma-newline-after */
 /* med salmon #f8d3c5 blush #fceee9 pale sage #dde6d5 med sage #a3b899 dark sage #667b68 */
 header {
+  width:100%
   font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-size: 2rem;
-  padding: 1rem max(1rem,50% - 22rem) calc(2*var(--s));
+  padding-block: 5px;
   background-color: #a3b899;
+  /*border: 5px dashed #667b68;
+  border-radius: 10px; */
+  margin-bottom: 4rem;
+  
 }
+
 
 .blog-header-logo:hover {
   text-decoration: none;
@@ -17,6 +23,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .flex-auto {
   flex: 0 0 auto;
+}
+.outset {
+  border-style: outset;
+  
 }
 
 .h-250 { height: 250px; }
@@ -69,30 +79,25 @@ article {
     );
 }
 body {
-  background-color: #f8d3c5;
+  background-color: #fceee9;
+  opacity: 0.8;
+  background-image:  linear-gradient(#f8d3c5 2px, transparent 2px), linear-gradient(90deg, #f8d3c5 2px, transparent 2px), linear-gradient(#f8d3c5 1px, transparent 1px), linear-gradient(90deg, #f8d3c5 1px, #fceee9 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}/*background-color: #f8d3c5;
   background-size: 40px 40px;
   background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
-}
-footer {
+  */
+/*footer {
   background-color: #f8d3c5;
-}
+}*/
 /*header {
   
     border-image: linear-gradient(0deg,#cf65c1 8px,#f4ceef 0) fill 0//0 100vw;
     padding-block: 5px;
   
 }*/
-.wavy {
-  --s: 1em; /* the size of the wave */
-  --p: .9;    /* the curvature of the wave [0 2] */
 
-  --R: calc(var(--s)*sqrt(var(--p)*var(--p) + 1)) at 50%;
-  mask:
-    radial-gradient(var(--R) calc(100% - var(--s)*(1 + var(--p))), #000 99%, #0000 101%) 
-      calc(50% - 2*var(--s)) 0/calc(4*var(--s)),
-    radial-gradient(var(--R) calc(100% + var(--s)*var(--p)), #0000 99%, #000 101%) 
-      50% calc(-1*var(--s))/calc(4*var(--s)) repeat-x;
-}
 h2 {
   --a: -45deg; /* control the angle */
   --t: .23em; /* thickness of the underline */ 
